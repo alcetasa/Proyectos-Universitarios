@@ -17,7 +17,7 @@ Otro de mis proyectos más emocionantes involucró la aplicación de técnicas d
 # Contacto 📧
 * alcetasa96@gmail.com
 *  https://www.linkedin.com/in/alcetasa/
-Estoy emocionado por seguir explorando nuevas oportunidades y desafíos en el mundo de la estadística e informática. ¡No dudes en contactarme para discutir proyectos, ideas o colaboraciones!
+*  
+Estoy emocionado por seguir explorando nuevas oportunidades y desafíos en el mundo del analisi de datos.
 
-¡Gracias por visitar mi perfil!
 ¡Gracias por visitar mi perfil!
