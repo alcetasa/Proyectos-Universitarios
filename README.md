@@ -1,6 +1,6 @@
-# Presentándome
+#Hola, soy Alvaro Cesar Tauma Salvador,
 
-Hola, soy Alvaro Cesar Tauma Salvador, un estudiante apasionado de la estadística e informática. Me encanta explorar y analizar datos, y he trabajado en diversos proyectos que combinan mis conocimientos en estadística e informática.
+Un estudiante apasionado de la estadística e informática. Me encanta explorar y analizar datos, y he trabajado en diversos proyectos que combinan mis conocimientos en estadística e informática.
 
 ## Proyectos Destacados
 
