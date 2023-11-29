@@ -1,0 +1,181 @@
+/*
+Created: 20/03/2022
+Modified: 20/03/2022
+Model: MySQL 5.5
+Database: MySQL 5.5
+*/
+
+-- Create tables section -------------------------------------------------
+
+-- Table CIUDAD
+
+CREATE TABLE CIUDAD
+(
+  id_ciudad Varchar(20) NOT NULL,
+  nombredi Varchar(20) NOT NULL,
+  gpslongitud_inf Varchar(20) NOT NULL,
+  gpslatitud_inf Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE CIUDAD ADD PRIMARY KEY (id_ciudad)
+;
+
+-- Table VEHICULOS
+
+CREATE TABLE VEHICULOS
+(
+  id_vehiculo Char(20) NOT NULL,
+  inf342_1 Char(20) NOT NULL,
+  inf342_2 Char(20) NOT NULL,
+  inf342_3 Char(20) NOT NULL,
+  inf342_4 Char(20) NOT NULL,
+  inf342_5 Char(20) NOT NULL
+)
+;
+
+ALTER TABLE VEHICULOS ADD PRIMARY KEY (id_vehiculo)
+;
+
+-- Table COMISARIA_EQUIPO
+
+CREATE TABLE COMISARIA_EQUIPO
+(
+  id_nnm Char(20) NOT NULL,
+  inf212a_1 Char(20) NOT NULL,
+  inf263 Char(20) NOT NULL,
+  inf301 Char(20) NOT NULL,
+  inf334 Char(20) NOT NULL,
+  FK_id_nnm Char(20)
+)
+;
+
+CREATE INDEX IX_Relationship2 ON COMISARIA_EQUIPO (FK_id_nnm)
+;
+
+ALTER TABLE COMISARIA_EQUIPO ADD PRIMARY KEY (id_nnm)
+;
+
+-- Table FAC_TABLE
+
+CREATE TABLE FAC_TABLE
+(
+  inf110_tot Int NOT NULL,
+  inf112_mot Int NOT NULL,
+  inf113_pie Int NOT NULL,
+  inf114_inv_df Int NOT NULL,
+  inf115_inv_at Int NOT NULL,
+  inf116_inv_vf Int NOT NULL,
+  inf650_1_2016 Int NOT NULL,
+  inf650_1_2017 Int NOT NULL,
+  inf650_2_2016 Int NOT NULL,
+  inf650_2_2017 Int NOT NULL,
+  inf650_3_2016 Int NOT NULL,
+  inf650_3_2017 Int NOT NULL,
+  inf650_4_2016 Int NOT NULL,
+  inf650_4_2017 Int NOT NULL,
+  inf650_5_2016 Int NOT NULL,
+  inf650_5_2017 Int NOT NULL,
+  inf650_6_2016 Int NOT NULL,
+  inf650_6_2017 Int NOT NULL,
+  inf650_7_2016 Int NOT NULL,
+  inf650_7_2017 Int NOT NULL,
+  inf650_8_2016 Int NOT NULL,
+  inf650_8_2017 Int NOT NULL,
+  inf650_9_2016 Int NOT NULL,
+  inf650_9_2017 Int NOT NULL,
+  inf650_10_2016 Int NOT NULL,
+  inf650_11_2016 Int NOT NULL,
+  inf650_12_2016 Int NOT NULL,
+  inf650_tot_2016 Int NOT NULL,
+  inf650_tot_2017 Int NOT NULL,
+  inf652_1_2016 Int NOT NULL,
+  inf652_1_2017 Int NOT NULL,
+  inf652_2_2016 Int NOT NULL,
+  inf652_2_2017 Int NOT NULL,
+  inf652_3_2016 Int NOT NULL,
+  inf652_3_2017 Int NOT NULL,
+  inf652_4_2016 Int NOT NULL,
+  inf652_4_2017 Int NOT NULL,
+  inf652_5_2016 Int NOT NULL,
+  inf652_5_2017 Int NOT NULL,
+  inf652_6_2016 Int NOT NULL,
+  inf652_6_2017 Int NOT NULL,
+  inf652_7_2016 Int NOT NULL,
+  inf652_7_2017 Int NOT NULL,
+  inf652_8_2016 Int NOT NULL,
+  inf652_8_2017 Int NOT NULL,
+  inf652_9_2016 Int NOT NULL,
+  inf652_9_2017 Int NOT NULL,
+  inf652_10_2016 Int NOT NULL,
+  inf652_11_2016 Int NOT NULL,
+  inf652_12_2016 Int NOT NULL,
+  inf652_tot_2016 Int NOT NULL,
+  inf652_tot_2017 Int NOT NULL,
+  inf653_1_2016 Int NOT NULL,
+  inf653_1_2017 Int NOT NULL,
+  inf653_2_2016 Int NOT NULL,
+  inf653_2_2017 Int NOT NULL,
+  inf653_3_2016 Int NOT NULL,
+  inf653_3_2017 Int NOT NULL,
+  inf653_4_2016 Int NOT NULL,
+  inf653_4_2017 Int NOT NULL,
+  inf653_5_2016 Int NOT NULL,
+  inf653_5_2017 Int NOT NULL,
+  inf653_6_2016 Int NOT NULL,
+  inf653_6_2017 Int NOT NULL,
+  inf653_7_2016 Int NOT NULL,
+  inf653_7_2017 Int NOT NULL,
+  inf653_8_2016 Int NOT NULL,
+  inf653_8_2017 Int NOT NULL,
+  inf653_9_2016 Int NOT NULL,
+  inf653_9_2017 Int NOT NULL,
+  inf653_10_2016 Int NOT NULL,
+  inf653_11_2016 Int NOT NULL,
+  inf653_12_2016 Int NOT NULL,
+  inf653_tot_2016 Int NOT NULL,
+  inf653_tot_2017 Int NOT NULL,
+  id_ciudad Varchar(20) NOT NULL,
+  id_vehiculo Char(20) NOT NULL,
+  id_nnm Char(20) NOT NULL
+)
+;
+
+CREATE INDEX IX_Relationship1 ON FAC_TABLE (id_ciudad)
+;
+
+CREATE INDEX IX_Relationship4 ON FAC_TABLE (id_vehiculo)
+;
+
+CREATE INDEX IX_Relationship5 ON FAC_TABLE (id_nnm)
+;
+
+-- Table COMISARIA_EQUIPO
+
+CREATE TABLE COMISARIA_EQUIPO
+(
+  id_nnm Char(20) NOT NULL,
+  inf212a_1 Char(20) NOT NULL,
+  inf263 Char(20) NOT NULL,
+  inf301 Char(20) NOT NULL,
+  inf334 Char(20) NOT NULL
+)
+;
+
+ALTER TABLE COMISARIA_EQUIPO ADD PRIMARY KEY (id_nnm)
+;
+
+-- Create foreign keys (relationships) section -------------------------------------------------
+
+ALTER TABLE FAC_TABLE ADD CONSTRAINT  FOREIGN KEY (id_ciudad) REFERENCES CIUDAD (id_ciudad) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE COMISARIA_EQUIPO ADD CONSTRAINT Relationship2 FOREIGN KEY (FK_id_nnm) REFERENCES COMISARIA_EQUIPO (id_nnm) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE FAC_TABLE ADD CONSTRAINT  FOREIGN KEY (id_vehiculo) REFERENCES VEHICULOS (id_vehiculo) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE FAC_TABLE ADD CONSTRAINT  FOREIGN KEY (id_nnm) REFERENCES COMISARIA_EQUIPO (id_nnm) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+

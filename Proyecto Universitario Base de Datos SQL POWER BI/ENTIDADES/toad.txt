@@ -1,0 +1,214 @@
+/*
+Created: 19/03/2022
+Modified: 20/03/2022
+Model: MySQL 5.5
+Database: MySQL 5.5
+*/
+
+-- Create tables section -------------------------------------------------
+
+-- Table POLICIAS
+
+CREATE TABLE POLICIAS
+(
+  inf110_tot Int NOT NULL,
+  inf112_mot Int NOT NULL,
+  inf113_pie Int NOT NULL,
+  inf_114_inv_df Int NOT NULL,
+  inf115_inv_at Int NOT NULL,
+  inf116_inv_vf Int NOT NULL,
+  id_policia Char(20) NOT NULL,
+  id_nnm Char(20) NOT NULL
+)
+;
+
+CREATE INDEX IX_Relationship1 ON POLICIAS (id_nnm)
+;
+
+ALTER TABLE POLICIAS ADD PRIMARY KEY (id_policia)
+;
+
+-- Table COMISARIA
+
+CREATE TABLE COMISARIA
+(
+  id_nnm Char(20) NOT NULL,
+  inf109 Int NOT NULL,
+  inf109b3 Int NOT NULL,
+  inf207 Int NOT NULL,
+  inf212a_1 Char(20) NOT NULL,
+  inf263 Char(20) NOT NULL,
+  id_ciudad Char(20)
+)
+;
+
+CREATE INDEX IX_ ON COMISARIA (id_ciudad)
+;
+
+ALTER TABLE COMISARIA ADD PRIMARY KEY (id_nnm)
+;
+
+-- Table CIUDAD
+
+CREATE TABLE CIUDAD
+(
+  ccdi Char(20) NOT NULL,
+  ubigeo Char(20) NOT NULL,
+  nombredi Char(20) NOT NULL,
+  gpslongitud_inf Varchar(20) NOT NULL,
+  gpslatitud_if Varchar(20) NOT NULL,
+  id_ciudad Char(20) NOT NULL
+)
+;
+
+ALTER TABLE CIUDAD ADD PRIMARY KEY (id_ciudad)
+;
+
+-- Table VEHICULOS
+
+CREATE TABLE VEHICULOS
+(
+  inf342_1 Char(20) NOT NULL,
+  inf342_2 Char(20) NOT NULL,
+  inf342_3 Char(20) NOT NULL,
+  inf342_4 Char(20) NOT NULL,
+  inf342_5 Char(20) NOT NULL,
+  id_vehiculo Char(20) NOT NULL,
+  id_policia Char(20),
+  id_nnm Char(20) NOT NULL
+)
+;
+
+CREATE INDEX IX_Relationship3 ON VEHICULOS (id_policia)
+;
+
+CREATE INDEX IX_Relationship4 ON VEHICULOS (id_nnm)
+;
+
+ALTER TABLE VEHICULOS ADD PRIMARY KEY (id_vehiculo)
+;
+
+-- Table EQUIPOS
+
+CREATE TABLE EQUIPOS
+(
+  inf301 Char(20) NOT NULL,
+  inf301_total Int NOT NULL,
+  inf334 Char(20) NOT NULL,
+  inf337 Int NOT NULL,
+  inf638 Int NOT NULL,
+  id_equipo Char(20) NOT NULL,
+  id_nnm Char(20) NOT NULL
+)
+;
+
+CREATE INDEX IX_Relationship6 ON EQUIPOS (id_nnm)
+;
+
+ALTER TABLE EQUIPOS ADD PRIMARY KEY (id_equipo)
+;
+
+-- Table DETENCIONES
+
+CREATE TABLE DETENCIONES
+(
+  inf650_1_2016 Int NOT NULL,
+  inf650_1_2017 Int NOT NULL,
+  inf650_2_2016 Int NOT NULL,
+  inf650_2_2017 Int NOT NULL,
+  inf650_3_2016 Int NOT NULL,
+  inf650_3_2017 Int NOT NULL,
+  inf650_4_2016 Int NOT NULL,
+  inf650_4_2017 Int NOT NULL,
+  inf650_5_2016 Int NOT NULL,
+  inf650_5_2017 Int NOT NULL,
+  inf650_6_2016 Int NOT NULL,
+  inf650_6_2017 Int NOT NULL,
+  inf650_7_2016 Int NOT NULL,
+  inf650_7_2017 Int NOT NULL,
+  inf650_8_2016 Int NOT NULL,
+  inf650_8_2017 Int NOT NULL,
+  inf650_9_2016 Int NOT NULL,
+  inf650_9_2017 Int NOT NULL,
+  inf650_10_2016 Int NOT NULL,
+  inf650_11_2016 Int NOT NULL,
+  inf650_12_2016 Int NOT NULL,
+  inf650_tot_2016 Int NOT NULL,
+  inf650_tot_2017 Int NOT NULL,
+  inf652_1_2016 Int NOT NULL,
+  inf652_1_2017 Int NOT NULL,
+  inf652_2_2016 Int NOT NULL,
+  inf652_2_2017 Int NOT NULL,
+  inf652_3_2016 Int NOT NULL,
+  inf652_3_2017 Int NOT NULL,
+  inf652_4_2016 Int NOT NULL,
+  inf652_4_2017 Int NOT NULL,
+  inf652_5_2016 Int NOT NULL,
+  inf652_5_2017 Int NOT NULL,
+  inf652_6_2016 Int NOT NULL,
+  inf652_6_2017 Int NOT NULL,
+  inf652_7_2016 Int NOT NULL,
+  inf652_7_2017 Int NOT NULL,
+  inf652_8_2016 Int NOT NULL,
+  inf652_8_2017 Int NOT NULL,
+  inf652_9_2016 Int NOT NULL,
+  inf652_9_2017 Int NOT NULL,
+  inf652_10_2016 Int NOT NULL,
+  inf652_11_2016 Int NOT NULL,
+  inf652_12_2016 Int NOT NULL,
+  inf652_tot_2016 Int NOT NULL,
+  inf652_tot_2017 Int NOT NULL,
+  inf653_1_2016 Int NOT NULL,
+  inf653_1_2017 Int NOT NULL,
+  inf653_2_2016 Int NOT NULL,
+  inf653_2_2017 Int NOT NULL,
+  inf653_3_2016 Int NOT NULL,
+  inf653_3_2017 Int NOT NULL,
+  inf653_4_2016 Int NOT NULL,
+  inf653_4_2017 Int NOT NULL,
+  inf653_5_2016 Int NOT NULL,
+  inf653_5_2017 Int NOT NULL,
+  inf653_6_2016 Int NOT NULL,
+  inf653_6_2017 Int NOT NULL,
+  inf653_7_2016 Int NOT NULL,
+  inf653_7_2017 Int NOT NULL,
+  inf653_8_2016 Int NOT NULL,
+  inf653_8_2017 Int NOT NULL,
+  inf653_9_2016 Int NOT NULL,
+  inf653_9_2017 Int NOT NULL,
+  inf653_10_2016 Int NOT NULL,
+  inf653_11_2016 Int NOT NULL,
+  inf653_12_2016 Int NOT NULL,
+  inf653_tot_2016 Int NOT NULL,
+  inf653_tot_2017 Int NOT NULL,
+  id_detenciones Char(20) NOT NULL,
+  id_policia Char(20) NOT NULL
+)
+;
+
+CREATE INDEX IX_Relationship5 ON DETENCIONES (id_policia)
+;
+
+ALTER TABLE DETENCIONES ADD PRIMARY KEY (id_detenciones)
+;
+
+-- Create foreign keys (relationships) section -------------------------------------------------
+
+ALTER TABLE POLICIAS ADD CONSTRAINT pertenece FOREIGN KEY (id_nnm) REFERENCES COMISARIA (id_nnm) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE COMISARIA ADD CONSTRAINT cuenta FOREIGN KEY (id_ciudad) REFERENCES CIUDAD (id_ciudad) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE VEHICULOS ADD CONSTRAINT Relationship3 FOREIGN KEY (id_policia) REFERENCES POLICIAS (id_policia) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE VEHICULOS ADD CONSTRAINT tiene FOREIGN KEY (id_nnm) REFERENCES COMISARIA (id_nnm) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE DETENCIONES ADD CONSTRAINT captura FOREIGN KEY (id_policia) REFERENCES POLICIAS (id_policia) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE EQUIPOS ADD CONSTRAINT cuenta FOREIGN KEY (id_nnm) REFERENCES COMISARIA (id_nnm) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
